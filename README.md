@@ -35,21 +35,21 @@
 
 ### Overall Metrics
 
-| Metric | Score | Description |
-|--------|-------|-------------|
-| **Accuracy** | **97.88%** | Classification accuracy |
-| **F1-Macro** | **98.11%** | Macro-averaged F1 score |
-| **F1-Weighted** | **97.88%** | Weighted F1 score |
-| **Loss** | **0.0652** | Cross-entropy loss |
+| Metric                | Score            | Description             |
+| --------------------- | ---------------- | ----------------------- |
+| **Accuracy**    | **97.88%** | Classification accuracy |
+| **F1-Macro**    | **98.11%** | Macro-averaged F1 score |
+| **F1-Weighted** | **97.88%** | Weighted F1 score       |
+| **Loss**        | **0.0652** | Cross-entropy loss      |
 
 ### Per-Class F1 Scores
 
-| Class | Precision | Recall | F1-Score | Support |
-|-------|-----------|--------|----------|---------|
-| General (0) | 99.35% | 97.45% | **98.39%** | 157 |
-| Excellent (1) | 96.03% | 99.18% | **97.58%** | 122 |
-| Good (2) | 97.87% | 97.05% | **97.46%** | 237 |
-| Poor (3) | 98.08% | 100.00% | **99.03%** | 51 |
+| Class         | Precision | Recall  | F1-Score         | Support |
+| ------------- | --------- | ------- | ---------------- | ------- |
+| General (0)   | 99.35%    | 97.45%  | **98.39%** | 157     |
+| Excellent (1) | 96.03%    | 99.18%  | **97.58%** | 122     |
+| Good (2)      | 97.87%    | 97.05%  | **97.46%** | 237     |
+| Poor (3)      | 98.08%    | 100.00% | **99.03%** | 51      |
 
 ✅ **All classes achieve F1 > 97%!**
 
@@ -192,6 +192,7 @@ python quick_start.py
 ```
 
 **Output**:
+
 ```
 ================================================================================
 HeteroGNN V3.0 - 快速开始
@@ -270,14 +271,14 @@ gatedhgn/
 
 ### Model Components
 
-| Component | Description | Location |
-|-----------|-------------|----------|
-| CompanyFeatureAttention | Self-attention for company features | `hetero_gnn_model_v3.py:20` |
-| IndustryFeatureAttention | Self-attention for industry features | `hetero_gnn_model_v3.py:53` |
-| CompanyIndustryAttention | Cross-attention between companies and industries | `hetero_gnn_model_v3.py:86` |
-| GatedMetapathAttention | ⭐ Core innovation: gated metapath aggregation | `hetero_gnn_model_v3.py:122` |
-| MetapathAggregator | Metapath-specific message passing | `hetero_gnn_model_v3.py:252` |
-| HeteroGNNRiskModel | Main model class | `hetero_gnn_model_v3.py:324` |
+| Component                | Description                                      | Location                       |
+| ------------------------ | ------------------------------------------------ | ------------------------------ |
+| CompanyFeatureAttention  | Self-attention for company features              | `hetero_gnn_model_v3.py:20`  |
+| IndustryFeatureAttention | Self-attention for industry features             | `hetero_gnn_model_v3.py:53`  |
+| CompanyIndustryAttention | Cross-attention between companies and industries | `hetero_gnn_model_v3.py:86`  |
+| GatedMetapathAttention   | ⭐ Core innovation: gated metapath aggregation   | `hetero_gnn_model_v3.py:122` |
+| MetapathAggregator       | Metapath-specific message passing                | `hetero_gnn_model_v3.py:252` |
+| HeteroGNNRiskModel       | Main model class                                 | `hetero_gnn_model_v3.py:324` |
 
 ---
 
@@ -375,12 +376,12 @@ Total edges: 166,324
 
 ### Class Distribution
 
-| Class | Count | Percentage |
-|-------|-------|------------|
-| General | 157 | 27.7% |
-| Excellent | 122 | 21.5% |
-| Good | 237 | 41.8% |
-| Poor | 51 | 9.0% |
+| Class     | Count | Percentage |
+| --------- | ----- | ---------- |
+| General   | 157   | 27.7%      |
+| Excellent | 122   | 21.5%      |
+| Good      | 237   | 41.8%      |
+| Poor      | 51    | 9.0%       |
 
 **Imbalance Ratio**: 4.65:1 (mild imbalance)
 
@@ -443,28 +444,29 @@ numpy.random.seed(42)
 
 ### Version Comparison
 
-| Version | Accuracy | F1-Macro | Features |
-|---------|----------|----------|----------|
-| V1.0 | 84.48% | 83.58% | Metapath bug |
-| V2.0 | ~87.30% | ~86.80% | Fixed implementation |
+| Version        | Accuracy         | F1-Macro         | Features                  |
+| -------------- | ---------------- | ---------------- | ------------------------- |
+| V1.0           | 84.48%           | 83.58%           | Metapath bug              |
+| V2.0           | ~87.30%          | ~86.80%          | Fixed implementation      |
 | **V3.0** | **97.88%** | **98.11%** | **Gated mechanism** |
 
 ### Comparison with Paper Baseline
 
-| Model | Accuracy | Improvement |
-|-------|----------|-------------|
-| Paper Baseline | 82.18% | - |
+| Model                     | Accuracy         | Improvement       |
+| ------------------------- | ---------------- | ----------------- |
+| Paper Baseline            | 82.18%           | -                 |
 | **GatedHGN (V3.0)** | **97.88%** | **+15.70%** |
 
 ### Ablation Study
 
-| Configuration | Accuracy | Epochs |
-|---------------|----------|--------|
-| V3.0 (no GraphSMOTE, 100 epochs) | 92.06% | 100 |
+| Configuration                              | Accuracy         | Epochs        |
+| ------------------------------------------ | ---------------- | ------------- |
+| V3.0 (no GraphSMOTE, 100 epochs)           | 92.06%           | 100           |
 | **V3.0 (no GraphSMOTE, 200 epochs)** | **97.88%** | **200** |
-| V3.0 (+GraphSMOTE, 73 epochs) | 76.30% | 73 |
+| V3.0 (+GraphSMOTE, 73 epochs)              | 76.30%           | 73            |
 
 **Key Findings**:
+
 - ✅ Gated mechanism improves performance by +10.58%
 - ✅ Sufficient training (200 epochs) is crucial
 - ✅ GraphSMOTE is not needed for mild imbalance (4.65:1)
@@ -501,7 +503,7 @@ If you use GatedHGN in your research, please cite:
 ```bibtex
 @software{gatedhgn2025,
   title={GatedHGN: A Gated Metapath Attention Heterogeneous Graph Neural Network for Risk Assessment},
-  author={Your Name},
+  author={Li Wenchuang},
   year={2025},
   url={https://github.com/yourusername/gatedhgn},
   version={3.0}
@@ -526,10 +528,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Author**: Your Name
-- **Email**: your.email@example.com
-- **GitHub**: [https://github.com/yourusername/gatedhgn](https://github.com/yourusername/gatedhgn)
-- **Issues**: [https://github.com/yourusername/gatedhgn/issues](https://github.com/yourusername/gatedhgn/issues)
+- **Author**: Li Wenchuang
+- **Email**:chenstar134@outlook.com
+- **GitHub**: [https://github.com/MothingAI/GatedHGN](https://github.com/yourusername/gatedhgn)
 
 ---
 
