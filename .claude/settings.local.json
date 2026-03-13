@@ -15,7 +15,11 @@
       "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\" -c \"import torch; data = torch.load\\(''data/hetero_graph.pt''\\); print\\(''=== 详细边统计（使用正确访问方式）===\\\\n''\\); [print\\(f''{edge_type}: {data[edge_type].edge_index.shape[1]:>10,} 条边''\\) for edge_type in data.edge_types]; print\\(f''\\\\n=== 边索引形状 ===''\\); [print\\(f''{edge_type}: {data[edge_type].edge_index.shape}''\\) for edge_type in data.edge_types]\")",
       "Bash(git init:*)",
       "Bash(git config:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
     ]
   }
 }
