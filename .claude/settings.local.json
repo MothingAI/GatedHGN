@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(D:SoftwareAnacondaenvspytorch_cuda121python.exe --version)",
+      "Bash(D:SoftwareAnacondaenvspytorch_cuda121python.exe -c \"import torch; print\\(f''PyTorch version: {torch.__version__}''\\); print\\(f''CUDA available: {torch.cuda.is_available\\(\\)}''\\)\")",
+      "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\" --version)",
+      "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\" -c \"import torch; print\\(f''PyTorch version: {torch.__version__}''\\); print\\(f''CUDA available: {torch.cuda.is_available\\(\\)}''\\)\")",
+      "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\" -c \"import torch_geometric; print\\(f''torch_geometric version: {torch_geometric.__version__}''\\)\")",
+      "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\":*)",
+      "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\" -c \"import torch; checkpoint = torch.load\\(''best_model_v3.pt'', map_location=''cpu''\\); print\\(''文件内容:''\\); print\\(''-'' * 50\\); [print\\(f''{k}: {type\\(v\\).__name__} {\"\"\"\" if isinstance\\(v, dict\\) else \"\"\"\" if isinstance\\(v, int\\) else \"\"\"\" if isinstance\\(v, float\\) else \"\"\"\"}''\\) for k, v in checkpoint.items\\(\\)]\")",
+      "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\" -c \"import torch; checkpoint = torch.load\\(''best_model_v3.pt'', map_location=''cpu''\\); print\\(''=== best_model_v3.pt 详细信息 ===\\\\n''\\); print\\(f''Epoch: {checkpoint[\"\"epoch\"\"] + 1}''\\); print\\(f''Loss: {checkpoint[\"\"loss\"\"]:.4f}''\\); print\\(f''Accuracy: {checkpoint[\"\"acc\"\"]*100:.2f}%''\\); print\\(f''F1-Macro: {checkpoint[\"\"f1_macro\"\"]*100:.2f}%''\\); print\\(f''F1-Weighted: {checkpoint[\"\"f1_weighted\"\"]*100:.2f}%''\\); print\\(''\\\\n各类别F1分数:''\\); classes = [''General'', ''Excellent'', ''Good'', ''Poor'']; [print\\(f''  {classes[i]}: {checkpoint[\"\"f1_per_class\"\"][i]*100:.2f}%''\\) for i in range\\(len\\(checkpoint[''f1_per_class'']\\)\\)]; print\\(''\\\\n模型参数统计:''\\); total_params = sum\\(p.numel\\(\\) for p in checkpoint[''model_state_dict''].values\\(\\)\\); print\\(f''  总参数量: {total_params:,}''\\); print\\(f''  参数块数量: {len\\(checkpoint[\"\"model_state_dict\"\"]\\)}''\\)\")",
+      "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\" -c \"import torch; data = torch.load\\(''data/hetero_graph.pt''\\); print\\(''=== 边详细信息 ===\\\\n''\\); [\\(print\\(f''{edge_type}: {data[edge_type].edge_index.shape[1]:,} 条边''\\) if edge_type in data else None\\) for edge_type in data.edge_types]\")",
+      "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\" -c \"import torch; data = torch.load\\(''data/hetero_graph.pt''\\); print\\(''=== 边类型统计 ===\\\\n''\\); edge_types = [\\(''company'', ''spillover'', ''company''\\), \\(''company'', ''belongs_to'', ''industry''\\), \\(''industry'', ''contains'', ''company''\\), \\(''industry'', ''supply_chain'', ''industry''\\)]; [print\\(f''{str\\(edge_type\\):45} {data[edge_type].edge_index.shape[1]:>10,} 条边''\\) if edge_type in data else print\\(f''{str\\(edge_type\\):45} {\"\"未找到\"\":>10}''\\) for edge_type in edge_types]; print\\(f''\\\\n总边数: {sum\\([data[edge_type].edge_index.shape[1] for edge_type in edge_types if edge_type in data]\\):,}''\\)\")",
+      "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\" -c \"import torch; data = torch.load\\(''data/hetero_graph.pt''\\); print\\(''=== 数据结构完整分析 ===\\\\n''\\); print\\(f''数据类型: {type\\(data\\)}''\\); print\\(f''节点类型: {data.node_types}''\\); print\\(f''边类型: {data.edge_types}''\\); print\\(f''\\\\n所有键:''\\); [print\\(f''  - {key}''\\) for key in list\\(data.keys\\(\\)\\)][:20]\")",
+      "Bash(\"D:/Software/Anaconda/envs/pytorch_cuda121/python.exe\" -c \"import torch; data = torch.load\\(''data/hetero_graph.pt''\\); print\\(''=== 详细边统计（使用正确访问方式）===\\\\n''\\); [print\\(f''{edge_type}: {data[edge_type].edge_index.shape[1]:>10,} 条边''\\) for edge_type in data.edge_types]; print\\(f''\\\\n=== 边索引形状 ===''\\); [print\\(f''{edge_type}: {data[edge_type].edge_index.shape}''\\) for edge_type in data.edge_types]\")",
+      "Bash(git init:*)",
+      "Bash(git config:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

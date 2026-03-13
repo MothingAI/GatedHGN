@@ -1,0 +1,83 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# PyTorch
+*.pth
+*.pt
+*.ckpt
+!best_model_v3.pt
+!data/hetero_graph.pt
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Data files (keep original data, ignore intermediate files)
+data/*.csv
+data/*.pkl
+data/*.npy
+!data/hetero_graph.pt
+!data/data_introduction.md
+
+# Results
+results/
+outputs/
+logs/
+*.log
+
+# Model checkpoints (keep best model)
+checkpoints/
+*.pt
+!best_model_v3.pt
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docs
+docs/_build/
+site/
